@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey Assignment Index Page</title>
+</head>
+<body>
+    <h1>Dojo Survey Assignment: Index</h1>
+    <h3>This is the Root Route</h3>
+
+    <form action="/form_results" method="POST">
+        Your Name:* <input type="text" name="name">
+        <br><br>
+        Dojo Location:* <select name="dojo_location" >
+            <option value="San_jose">San Jose</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Seattle">Seattle</option>
+        </select>
+        <br><br>
+        Favorite Language:* <select name="favorite_language"> 
+            <option value="Hebrew">Hebrew</option>
+            <option value="Russian">Russian</option>
+            <option value="Yiddish">Yiddish</option>
+            <option value="English">English</option>
+        </select>
+        <br><br>
+        Comment (Optional) 
+        <br>
+        <textarea name="comment" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Submit Comment">
+    </form>
+</body>
+</html>
