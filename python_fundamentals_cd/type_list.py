@@ -22,4 +22,3 @@ def typeList(inputVar):
 	else: 
 		print "The input was of number type"
 		print sum
-

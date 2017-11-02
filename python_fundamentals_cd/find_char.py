@@ -7,4 +7,5 @@ def findChars(str_list, search_str):
   	  new_list.append(str_list[i])
   	  
   print new_list
-		
+
+findChars([])

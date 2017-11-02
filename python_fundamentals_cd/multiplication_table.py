@@ -5,3 +5,4 @@ def multiplication_table():
 		for j in range(0, 13):
      
 			print i * j
+multiplication_table()
