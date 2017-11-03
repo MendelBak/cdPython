@@ -13,15 +13,11 @@
     <form action="/users" method="post">
         Name: <input type="text" name="name">
         Email: <input type="text" name="email">
-        <input type="text" value="Type Here To Create a User">
+        <input type="submit" value="Submit">
         <h2>My name is {{ name }}</h2>
         <p>Phrase: {{ phrase }} </p>
         <p>Times: {{ times }}</p>
-        {% for x in range(0,5)}
         <p>{{ x }} </p>
-
-        {% endfor %}
-
     </form>
 </body>
 </html>

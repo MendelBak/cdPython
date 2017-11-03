@@ -12,7 +12,7 @@ def form_results():
     #This is one way of defining the variables.
 
     # name = request.form['name']
-    # select_location = request.form['dojo_location']
+    # dojo_location = request.form['dojo_location']
     # favorite_language = request.form['favorite_language']
     # comment = request.form['comment'] 
 
