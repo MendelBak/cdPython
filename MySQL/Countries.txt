@@ -1,0 +1,85 @@
+MYSQL Countries Assignment from MySQL Queries module
+
+Question #1:
+
+SELECT countries.name, languages.language, languages.percentage
+
+FROM countries
+JOIN languages
+
+ON countries.id = languages.country_id
+
+WHERE languages.language = 'Slovene';
+ORDER BY languages.percentage DESC;
+
+Question #2:
+
+SELECT countries.name, COUNT(cities.id) AS num_cities
+
+FROM countries
+
+JOIN cities ON countries.id = cities.country_id
+
+GROUP BY countries.id
+
+ORDER BY COUNT(cities.id) DESC;
+
+Question #3:
+
+SELECT cities.name
+FROM cities
+
+JOIN countries ON cities.country_id = countries.id
+
+WHERE countries.name = 'Mexico' AND cities.population > 500000
+ORDER BY cities.population DESC;
+
+Question #4:
+
+Select countries.name, languages.language, languages.percentage
+
+FROM countries
+
+JOIN languages ON countries.id = languages.country_id
+
+WHERE percentage > 89.0
+
+ORDER BY percentage DESC;
+
+Question #5:
+
+SELECT name, surface_area, population
+
+FROM countries
+
+WHERE surface_area < 501 AND population > 100000;
+
+Question #6:
+
+SELECT name, government_form, capital, life_expectancy
+
+FROM countries
+
+WHERE government_form = 'Constitutional Monarchy' AND capital > 200 AND life_expectancy > 75;
+
+Question #7:
+
+SELECT countries.name, cities.name, cities.population, cities.district
+
+FROM countries
+J
+OIN cities ON countries.id = cities.country_id
+
+WHERE cities.district = 'Buenos Aires' AND cities.population > 500000;
+
+Question #7:
+
+SELECT region, COUNT(region)
+
+FROM countries
+
+GROUP BY region
+
+ORDER BY COUNT(region) DESC;
+
+

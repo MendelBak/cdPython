@@ -12,19 +12,18 @@ def index():
 
 @app.route("/guess", methods=["POST"])
 def guess():
-    session["picked_num"] = request.form["picked_num"]
+    session["picked_num"] = int(request.form["picked_num"])
+    print "This is the session variable for picked_num", session["picked_num"] # check the session variable
     return redirect("/guess_response")
 
 @app.route("/guess_response")
 def guess_response():
-    if session["picked_num"] > session["random_num"]:
-        print "Your guess was too high!"
-    elif session["picked_num"] < session["random_num"]:
-        print "Your guess was too low!"
+    if session["random_num"] > session["picked_num"]:
+        print "Too low. Try a higher number"
+    elif session["random_num"] < session["picked_num"]:
+        print "Too high. Try a lower number"
     else:
+        flash("You Win! The random number was {}".format(session["random_num"]))
         print "You Win!"
     return render_template("/guess_response.html")
-    
-    
-
 app.run(debug=True)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends Assignment: Flask + MYSQL</title>
+</head>
+
+<body>
+    <h2>Say Hi To Your Friends!</h2>
+
+    {% for friend in friends %}
+    <p>
+        <h3>First Name:</h3> {{ friend.first_name}}
+        Last Name: {{ friend.last_name}}
+        Occupation: {{ friend.occupation}}
+        Created At: {{ friend.created_at}}
+        Last Updated: {{ friend.updated_at}}
+    </p>
+    {% endfor %}
+
+    <h2>Add a friend!</h2>
+    <form action="/add_friend" method="POST">
+        First Name:
+        <input type="text" name="first_name"> Last Name:
+        <input type="text" name="last_name"> Occupation:
+        <input type="text" name="occupation">
+        <input type="hidden" name="add_friend">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

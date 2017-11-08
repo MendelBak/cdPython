@@ -16,7 +16,14 @@
         <button type="submit">Guess The Number!</button>
     </form>
     <h2>Your guess was: {{ session.picked_num }}</h2>
-    <h2>{{ flash }} </h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+    <!-- <h2>{{ flash }} </h2> -->
     <!-- <h2>Your Random Number was: {{ session["random_num"] }}</h2> -->
 </body>
 </html>

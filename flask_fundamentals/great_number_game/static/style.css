@@ -1,14 +1,10 @@
 *{
     padding: 0px;
     margin: 0px;
-    background-color: rgb(30, 167, 209);
+    background-color: rgb(28, 102, 124);
 }
 
 h1, h2, h3, p, form{
     text-align: center;
     margin-top: 10px;
-}
-
-button{
-    color: rgb(20, 94, 20);
 }
