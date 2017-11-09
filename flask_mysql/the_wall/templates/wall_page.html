@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall, of Death...</title>
+</head>
+
+<body>
+    <h1>Welcome, {{session["name_of_user"] }}, to Your Personal Wall</h1>
+
+    <fieldset>
+        <legend> Post a Message! </legend>
+        {% for post in post_select_results %}
+            <p><h4>{{ post.content}}</h4> {{ post.created_at }} </p>
+        {% endfor %}
+    </fieldset>
+
+    <form action="/post_submit" method="POST">
+        <input type="text" name="new_post">
+        <input type="submit" value="Submit New Post">
+    </form>
+
+    
+    
+    <!-- 1: Create DB with usernames and password COMPLETED 
+    2: SELECT db and validate new user doesn't already exist COMPLETED
+    3: if validation passes, INSERT new user into db (hashed passwords)md5 + salt
+    
+    Login Route{
+    4: When attempt to log in, SELECT from database and validate login info
+    5: If validation passes, REDIRECT to next profile template
+    } -->
+
+
+</body>
+
+</html>

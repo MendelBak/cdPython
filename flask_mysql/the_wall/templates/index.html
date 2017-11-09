@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Log In To The Wall</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Welcome To The Wall...</a>
+            </div>
+        </div>
+    </nav>
+    <!-- This is the flash message that tells you that you entered an incorrect username password for login or registration. -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+    <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+ {% endwith %}
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <form action="/register" method="POST">
+        <input type="text" name="username"  placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" placeholder="Re Password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    
+
+</body>
+
+</html>
