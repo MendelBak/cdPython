@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form Assignment</title>
+</head>
+
+<body>
+    <h3>Learning how to use POST data</h3>
+<!-- Don't forget to insert a POST method into the form below! -->
+    <form action="/surveys/process" method="POST">
+        {% csrf_token %} Your Name:*
+        <input type="text" name="name" placeholder="Your Name">
+        <br>
+        <br> 
+        Dojo Location:
+        <select name="location">
+            <option value="chicago">Chicago</option>
+            <option value="seattle">Seattle</option>
+            <option value="los_angeles">Los Angeles</option>
+        </select>
+        <br><br>
+        Favorite Language:
+        <select name="fav_language">
+            <option value="javascript">Javascript</option>
+            <option value="python">Python</option>
+            <option value="c++">C++</option>
+        </select>
+        <br>
+        <br> Comments: (optional)
+        <br>
+        <textarea name="comments" placeholder="Comments"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+
+</html>

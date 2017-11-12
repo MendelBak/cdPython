@@ -45,22 +45,24 @@ Edit
 
 2) include app urls.py in project urls.py
     from django.conf.urls import url, include
-    url(r'^', include('apps.<appname>.urls'))
+
+    url(r'^', include('apps.<appname>.urls')),
 
 
 3) create a method in app's views.py
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
     response = "Hello, I am your first request!"
-    return HttpResponse(response)
+    return render(request, <appname/html_document_name>)
 
 
 4) update app's urls.py file with route
 
 from django.conf.urls import url
 from . import views
+
 urlpatterns = [
     url(r'^$', views.index),
 ]

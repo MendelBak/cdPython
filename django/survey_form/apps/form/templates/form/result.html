@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results for Form POST data</title>
+</head>
+<body>
+    <h2>Results Page</h2>
+    Name: {{ request.session.name }}
+    <br>
+    Location: {{ request.session.location }}
+    <br>
+    Favorite Language: {{ request.session.fav_language }}
+    <br>
+    Comments: {{ request.session.comments }}
+    <br>
+    You submitted this form {{ request.session.counter }} times.
+
+    <form action="/go_back">
+        {% csrf_token %}
+        <input type="submit" value="Go Back">
+    </form>
+    <form action="/clear_counter">
+        {% csrf_token %}
+        <input type="submit" value="Clear Counter">
+    </form>
+</body>
+</html>
