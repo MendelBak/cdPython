@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wvalueth=device-wvalueth, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'session_words/style.css' %}">
+    <title>Session Words</title>
+</head>
+
+<body>
+    <h1>Session Words Index.HTML</h1>
+    <form action="add_word" method="POST">
+        {% csrf_token %}
+        <div class="form_group">
+            Add A New Word:
+            <input type="text" name="new_word">
+        </div>
+        <br>
+        <div class="form_group">
+            Choose A Color:
+            <br>
+            <input type="radio" name="color" value="blue" checked>
+            <label for="Blue">Blue</label>
+            <br>
+            <input type="radio" name="color" value="red">
+            <label for="Red">Red</label>
+            <br>
+            <input type="radio" name="color" value="green">
+            <label for="Green">Green</label>
+        </div>
+        <br>
+        <div class="form_group" method="POST">
+            <input type="checkbox" name="large_font"> Show Text In LARGE Font
+        </div>
+        <br>
+        <input type="submit" value="Add To Session">
+    </form>
+    <br>
+    <form action="/reset">
+        <input type="submit" value="Reset Session">
+    </form>
+    <div class="printout">
+        {% for dict in request.session.words_list %}
+           <p> <span style="color: {{ dict.color }}; font-size: {{ dict.font_size }};"> {{ dict.words }} </span> {{ request.session.timestamp }} </p>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>

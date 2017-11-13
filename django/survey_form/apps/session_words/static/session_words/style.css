@@ -1,0 +1,16 @@
+
+
+*{
+    background-color: rgb(221, 210, 210);
+}
+
+input[type=radio], input[type=checkbox]{
+    box-shadow: 1px 1px 1px;
+}
+
+input[type=submit]{
+    box-shadow: 2px 2px 2px;
+    border: 1px solid black;
+    background-color: firebrick;
+}
+

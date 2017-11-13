@@ -14,12 +14,14 @@
     Your random word (14 chars long) is: {{ request.session.random_word.word }}
     <br> Random Word #{{ request.session.counter }}
     <br>
-    <a href="/generate">
-        <button>Generate</button>
-    </a>
-    <a href="/reset">
-        <button>Reset</button>
-    </a>
+    <form action="random_word/generate" method="POST">
+        {% csrf_token %}
+            <input type="submit" value="Generate">
+    </form>
+    <form action="random_word/reset" method="POST">
+        {% csrf_token %}
+            <input type="submit" value="Reset">
+    </form>
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(216, 207, 207);
+}
+
+div{
+    display: inline-block;
+}
+select{
+    border-radius: 5px;
+}
+input{
+    background-color: rgb(31, 146, 31);
+    border-radius: 5px;
+}
+

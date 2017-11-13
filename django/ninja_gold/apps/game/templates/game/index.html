@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load static%}
+    <link rel="stylesheet" href="{% static 'game/style.css' %}" media="screen" title="no title" charset="utf-8">
+
+    <title>Ninja Gold Game</title>
+</head>
+
+<body>
+    <h3>Play The Ninja Gold Game!</h3>
+    <h2>Total Gold: {{ request.session.total_gold }}</h2>
+    <form action="reset" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Reset">
+    </form>
+    <div class="location_box">
+        <h4>Farm</h4>
+        <span>earns 10 - 20 gold</span>
+        <br>
+        <br>
+        <form action="process_money/farm" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Farm Gold">
+        </form>
+    </div>
+    <div class="location_box">
+        <h4>Cave</h4>
+        <span>earns 5 - 10 gold</span>
+        <br>
+        <br>
+        <form action="process_money/cave" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Find Gold">
+        </form>
+    </div>
+    <div class="location_box">
+        <h4>House</h4>
+        <span>earns 2 - 5 gold</span>
+        <br>
+        <br>
+        <form action="process_money/house" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Do Chores For Gold">
+        </form>
+    </div>
+    <div class="location_box">
+        <h4>Casino</h4>
+        <span>earns / loses 0 - 50 gold</span>
+        <br>
+        <br>
+        <form action="process_money/casino" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Bet Gold">
+        </form>
+    </div>
+    <div id="log">
+        <fieldset>
+            <legend>Log</legend>
+            <p>
+                {% for message in request.session.log_message %} 
+                    {% if "won" in message %}
+                        <p style="color: green;"> {{ message }} </p>
+                    {% else %}
+                        <p style="color: red;"> {{ message }} </p>
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </fieldset>
+    </div>
+</body>
+
+</html>

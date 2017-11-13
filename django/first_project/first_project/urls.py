@@ -18,9 +18,7 @@ from django.conf.urls import url, include
 
 
 urlpatterns = [
-    # this needs to be commented out in order for the random word generator to run since it needs to be on the root route.
-    # url(r'^', include('apps.first_app.urls')), 
+    url(r'^', include('apps.first_app.urls')), 
     url(r'^time_display', include('apps.time_display.urls')),
-    # url(r'^random_word', include('apps.random_word.urls')),
-    url(r'^', include('apps.random_word.urls')),
+    url(r'^random_word', include('apps.random_word.urls')),
 ]
