@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'apps.first_app',
     'apps.time_display',
     'apps.random_word',
+    'apps.surveys',
+    'apps.users',
+    'apps.blogs',
 
 ]
 

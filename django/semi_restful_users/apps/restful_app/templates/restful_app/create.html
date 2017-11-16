@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add A New User</title>
+</head>
+
+<body>
+    <h1>Add A New User</h1>
+
+    <form action="create" method="POST">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name">
+        <br>
+        <br>
+        <input type="text" name="last_name" placeholder="Last Name">
+        <br>
+        <br>
+        <input type="text" name="email" placeholder="Email">
+        <br>
+        <br>
+        <input type="submit" value="Create">
+        <br>
+        <br>
+    </form>
+
+    <!-- Flash Messages from views.py in case of error or successful adding of new user-->
+    {% if messages %}
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+  {% endif %}
+
+    <a href="/">Go Back</a>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users Display Page</title>
+</head>
+
+<body>
+        <h1>User {{ user_data_key.id }}</h1> 
+        {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+        </tr>
+        <tr>
+            <td>{{ user_data_key.id }}</td>
+            <td>
+                 {{ user_data_key.first_name }} {{ user_data_key.last_name }}  
+            </td>
+            <td>{{ user_data_key.email }}</td>
+            <td>{{ user_data_key.created_at }}</td>
+        </tr>
+    </table>
+
+    <a href="/">Go Home</a>
+</body>
+
+</html>
