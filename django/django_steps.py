@@ -23,6 +23,7 @@ Creation
     'apps.<appname>'
 
 #2) include app urls.py in project urls.py
+
 from django.conf.urls import url, include
 
 urlpatterns = [
@@ -140,10 +141,10 @@ Admin.objects.filter(age__gt=80)  - filters objects with age greater than 80
 
 
 # Validation
-1) Create a user.Manager class in your models.py file. In the class create a function with all the validation logic (VALIDATION LOGIC SHOULD ONLY BE IN MODELS.PY FILE)
+1) Create a user.Manager class in your models.py file above your class. In the class create a function with all the validation logic (VALIDATION LOGIC SHOULD ONLY BE IN MODELS.PY FILE)
 2) Place "objects = <ManagerClassName()>" in the class it is running validation on. 
 3) Collect all error messages in a dictionary
-4) Pass dictionary to the view where the function is beng used
+4) Pass dictionary to the view where the function is being used
 5) Check if there are any error messages in the dictionary using if: len < 0 else: run your query
 6) Loop through your error messages dictionary and save the messages in messages (to flash messages) one message at a time.
 7) In your HTML, loop through your messages and print them out.
