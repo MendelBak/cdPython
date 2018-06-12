@@ -1,4 +1,22 @@
-Creation
+
+
+
+
+# SETUP
+# 1) Ensure that python, pip, virtualenv, and django are installed
+    --> pip install virtualenv
+# 2) create a django virtual environment (using bash or MacOS)
+    --> virtualenv djangoEnjv
+    --> source djangoEnv/Scripts/activate
+        #2) (If you're using Windows or cmd or Powershell)
+        --> python -m virtualenv djangoEnv
+        --> call djangoEnv/Scripts/activate
+# 3) Install django inside your virtual environment
+    -- > pip install django
+
+
+
+# CREATION
 # 1) create a Django project
     --> django-admin startproject <project name goes here>
 
@@ -17,7 +35,14 @@ Creation
     --> cd <app name goes here>
     --> touch urls.py
 
-#Edit
+# 6) Run migrations
+    --> cd ../../
+    --> python manage.py migrate
+    
+# 7) Run the project (while in the root directory)
+    --> python manage.py runserver
+
+#EDIT
 #1) settings.py in project folder -> register newly created app
     in INSTALLED_APPS add
     'apps.<appname>'
@@ -47,9 +72,9 @@ def index(request):
     return HttpResponse(response)
 
 # Go back to main project folder
-python manage.py runserver
-python manage.py makemigrations
-python manage.py migrate
+    --> python manage.py runserver
+    --> python manage.py makemigrations
+    --> python manage.py migrate
 
 
   make ERD diagram
