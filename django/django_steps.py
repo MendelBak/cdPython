@@ -1,7 +1,8 @@
 
 
 
-
+#(This boilerplate works with Python 3.7 and Django 2.0)
+# (First working project using this template is the ajaxPagination project in my cdPython repo)
 # SETUP
 # 1) Ensure that python, pip, virtualenv, and django are installed
     --> pip install virtualenv
