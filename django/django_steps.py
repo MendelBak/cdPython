@@ -38,7 +38,7 @@
 # 6) Run migrations
     --> cd ../../
     --> python manage.py migrate
-    
+
 # 7) Run the project (while in the root directory)
     --> python manage.py runserver
 
@@ -47,36 +47,43 @@
     in INSTALLED_APPS add
     'apps.<appname>'
 
-#2) include app urls.py in project urls.py
+#2) include app urls.py in >>project's<< urls.py and delete the two other "from" statements.
 
-from django.conf.urls import url, include
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
-    url(r'^', include('apps.<appname>.urls')),
+    path('', include('apps.testApp.urls')),
+    path('admin/', admin.site.urls),
 ]
 
-# 3) Add route to urls.py file in the new app
-from django.conf.urls import url
+# 3) Add route to the >>app's<< urls.py file
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+    path('', views.index, name='index'),
 ]
 
-# ) Create a method in app's views.py
-
+# 4) Create a method in the app's views.py
 from django.shortcuts import render, redirect, HttpResponse
 
 def index(request):
-    response = "Hello, I am your first request!"
-    return HttpResponse(response)
+    return HttpResponse("Hello, world. You're at the polls index.")
 
-# Go back to main project folder
+# 5) Go back to main project folder
     --> python manage.py runserver
     --> python manage.py makemigrations
     --> python manage.py migrate
 
+# 6) If you're having a persistent error where you cannot import packages create a .pylintrc file in the root directory and place this inside it.
+[MASTER]
+init-hook='import sys; sys.path.append("C:\Users\mende\AppData\Roaming\Python\Python37\Lib\site-packages")'
 
+
+
+
+# Creating models
   make ERD diagram
   python manage.py graph_models -a -o myapp_models.png
 
